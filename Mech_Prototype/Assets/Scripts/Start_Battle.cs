@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Start_Battle : MonoBehaviour {
 	public void Example() {
-		Application.LoadLevel("Scene_Battle");
+		Application.LoadLevel("Scene_Battle3");
 	}
 }

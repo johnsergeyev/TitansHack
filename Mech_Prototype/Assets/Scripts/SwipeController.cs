@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class SwipeController : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler{
-	public float sensivity = 100f;
-	public float deadZone = 10f;
+	public float swipeKf = 100f;
 
 	private RectTransform rt;
 	private float value = 0.0f;
@@ -25,34 +24,34 @@ public class SwipeController : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 	public virtual void OnDrag(PointerEventData ped) {
 		if (!isTouched)
         {
-            Debug.Log("isn't touched");
 			return;
         }
 
 		if (ped.pointerId != touchId)
         {
-            Debug.Log("wrong pointer");
 			return;
         }
 
         delta = ped.position.x - touchX;
-		if (Mathf.Abs (delta) < deadZone) {
-			value = 0f;
-			return;
+
+		value = delta;
+
+		if ((Mathf.Abs (value) / swipeKf) > 1f) {
+			float oldDelta = value;
+			float mpl = 1f;
+
+			if (value < 0f) {
+				value = -swipeKf;
+				mpl = -1f;
+			} else {
+				value = swipeKf;
+			}
+
+			oldDelta = Mathf.Abs (oldDelta) - Mathf.Abs (value);
+			touchX += mpl * oldDelta;
 		}
 
-		delta = delta - deadZone;
-
-		if (sensivity == 100f) {
-			value = delta;
-		} else {
-			value = delta / (1 / (sensivity / 100));
-		}
-
-		value /= 10;
-
-        if (value < -1) value = -1;
-        if (value > 1) value = 1;
+		value /= swipeKf;
     }
 
 	public virtual void OnPointerDown(PointerEventData ped) {

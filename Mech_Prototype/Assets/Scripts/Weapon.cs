@@ -8,7 +8,11 @@ public class Weapon : MonoBehaviour, IWeapon {
 	public float shootDistance = 100f;
  	public float shootSpeed = 5f;
 
+	[HideInInspector]
+	public Animator animator;
+	[HideInInspector]
 	public Transform shootingPoint;
+
 	protected bool isFingerOnTheTrigger = false;
 
 	protected void Shoot() {

@@ -44,7 +44,6 @@ public class FireButtonController : MonoBehaviour, IPointerUpHandler, IPointerDo
 	}
 
 	public virtual void OnPointerEnter(PointerEventData ped) {
-		//Debug.Log ("pointer enter " + isMainWeapon + " continiousShooting: " + continiousShooting + " isOver: " + isOver);
 		if (!continiousShooting)
 			return;
 		if (isOver)
@@ -54,13 +53,19 @@ public class FireButtonController : MonoBehaviour, IPointerUpHandler, IPointerDo
 	}
 
 	public virtual void OnPointerExit(PointerEventData ped) {
-		//Debug.Log ("pointer exit " + isMainWeapon + " continiousShooting: " + continiousShooting + " isOver: " + isOver);
 		if (!continiousShooting)
 			return;
 		if (!isOver)
 			return;
 		isOver = false;
 		OnPointerUp (ped);
+	}
+
+	IEnumerator upAfterDelay() {
+		yield return new WaitForSeconds (0.1f);
+		isDown = false;
+		isOver = false;
+		EventManager.TriggerEvent ("onFireButtonUp" + (isMainWeapon?"Main":"Secondary"));
 	}
 
 	public virtual void OnPointerDown(PointerEventData ped) {
@@ -70,6 +75,10 @@ public class FireButtonController : MonoBehaviour, IPointerUpHandler, IPointerDo
 			isOver = true;
 
 		EventManager.TriggerEvent ("onFireButtonDown" + (isMainWeapon?"Main":"Secondary"));
+
+		if (!continiousShooting) {
+			StartCoroutine ("upAfterDelay");
+		}
 	}
 
 	public virtual void OnPointerUp(PointerEventData ped) {

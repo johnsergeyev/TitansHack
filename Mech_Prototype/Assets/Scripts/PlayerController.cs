@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 	public JoystickController joystick;
 	public SwipeController swipe;
 	public Transform body;
+	private Animator animator;
 
 	public float movementSpeed = 2f;
 	public float rotationSpeed = 20f;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour {
 	private float bodyAngle;
 
 	private void Start() {
+		animator = GetComponent<Animator> ();
 		movementVector = Vector3.zero;
 		rotationVector = Vector3.zero;
 	}
@@ -47,8 +49,10 @@ public class PlayerController : MonoBehaviour {
 
 		movementVector.x = joystick.Horizontal();
 		movementVector.z = joystick.Vertical();
-		//movementVector.z = 0.5f;
 		rotationVector.y = swipe.Value();
+
+		animator.SetFloat ("speed", movementVector.z);
+		animator.SetFloat ("direction", movementVector.x);
 	}
 
 	private float rSpeed;

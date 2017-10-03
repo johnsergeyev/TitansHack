@@ -6,6 +6,7 @@ public class WeaponController : MonoBehaviour {
 	public Transform shootingPoint;
 	public Weapon mainWeapon;
 	public Weapon secondaryWeapon;
+	private Animator animator;
 
 	void OnEnable () {
 		EventManager.StartListening ("onFireButtonDownMain", onFireDownMain);
@@ -38,11 +39,17 @@ public class WeaponController : MonoBehaviour {
 	}
 
 	private void onFireDown(Weapon weapon) {
+		if (!animator) {
+			animator = GetComponent<Animator> ();
+		}
+
 		if (!weapon)
 			return;
 
 		weapon.shootingPoint = shootingPoint;
+
 		weapon.OnTriggerDown ();
+		animator.SetBool ("shooting", true);
 	}
 
 	private void onFireUp(Weapon weapon) {
@@ -50,6 +57,7 @@ public class WeaponController : MonoBehaviour {
 			return;
 
 		weapon.OnTriggerUp ();
+		animator.SetBool ("shooting", false);
 	}
 
 	void Update() {
@@ -58,5 +66,17 @@ public class WeaponController : MonoBehaviour {
 
 		if (secondaryWeapon)
 			secondaryWeapon.CheckShoot ();
+
+		Debug.DrawRay (Camera.main.transform.position, Camera.main.transform.forward * 100f);
+
+		RaycastHit hit;
+
+		if (Physics.Raycast (Camera.main.transform.position, Camera.main.transform.forward, out hit)) {
+			if (hit.collider.gameObject.tag == "Hittable") {
+				shootingPoint.LookAt(hit.point);
+			}
+		}
+
+		Debug.DrawRay (shootingPoint.position, shootingPoint.forward * 100f);
 	}
 }

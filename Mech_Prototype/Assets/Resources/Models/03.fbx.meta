@@ -1,0 +1,589 @@
+fileFormatVersion: 2
+guid: 020bf165f9a1c41a1ad26b7da85291fd
+timeCreated: 1480090524
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Armature
+    100004: Bone01.L.001
+    100006: Bone01.L.002
+    100008: Bone01.L.003
+    100010: Bone01.L.004
+    100012: Bone01.L.005
+    100014: Bone01.L.006
+    100016: Bone01.L.007
+    100018: Bone01.L.008
+    100020: Bone01.L.009
+    100022: Bone01.L.010
+    100024: Bone01.L.011
+    100026: Bone01.L.012
+    100028: Bone01.L.015
+    100030: Bone01.L.016
+    100032: Bone01.R.001
+    100034: Bone01.R.002
+    100036: Bone01.R.003
+    100038: Bone01.R.004
+    100040: Bone01.R.005
+    100042: Bone01.R.006
+    100044: Bone01.R.007
+    100046: Bone01.R.008
+    100048: Bone01.R.009
+    100050: Bone01.R.010
+    100052: Bone01.R.011
+    100054: Bone01.R.012
+    100056: Bone01.R.015
+    100058: Bone01.R.016
+    100060: Cube.006
+    100062: Cube.007
+    100064: Cube.008
+    100066: Cube.033
+    100068: Cube.039
+    100070: Cube.094
+    100072: Cube.095
+    100074: Cube.096
+    100076: Cube.097
+    100078: Cube.098
+    100080: Cube.099
+    100082: Cube.100
+    100084: Cube.101
+    100086: Cube.102
+    100088: Cylinder.002
+    100090: Cylinder.005
+    100092: Cylinder.006
+    100094: Cylinder.007
+    100096: Cylinder.008
+    100098: Cylinder.010
+    100100: Cylinder.011
+    100102: Cylinder.020
+    100104: Cylinder.023
+    100106: Cylinder.060
+    100108: Cylinder.061
+    100110: Cylinder.062
+    100112: Cylinder.063
+    100114: Plane.013
+    100116: Plane.014
+    100118: Plane.016
+    100120: Plane.018
+    100122: Plane.019
+    100124: Plane.020
+    100126: Plane.021
+    100128: Plane.024
+    100130: Plane.025
+    100132: Plane.026
+    100134: Plane.027
+    100136: Plane.028
+    100138: Plane.029
+    100140: Plane.031
+    100142: Plane.032
+    100144: Plane.034
+    100146: Plane.034_MeshPart0
+    100148: Plane.034_MeshPart1
+    100150: Plane.034_MeshPart2
+    100152: Plane.034_MeshPart3
+    100154: Plane.034_MeshPart4
+    100156: Plane.034_MeshPart5
+    100158: Plane.038
+    100160: Plane.039
+    100162: Plane.040
+    100164: Plane.042
+    100166: Plane.043
+    100168: root
+    400000: //RootNode
+    400002: Armature
+    400004: Bone01.L.001
+    400006: Bone01.L.002
+    400008: Bone01.L.003
+    400010: Bone01.L.004
+    400012: Bone01.L.005
+    400014: Bone01.L.006
+    400016: Bone01.L.007
+    400018: Bone01.L.008
+    400020: Bone01.L.009
+    400022: Bone01.L.010
+    400024: Bone01.L.011
+    400026: Bone01.L.012
+    400028: Bone01.L.015
+    400030: Bone01.L.016
+    400032: Bone01.R.001
+    400034: Bone01.R.002
+    400036: Bone01.R.003
+    400038: Bone01.R.004
+    400040: Bone01.R.005
+    400042: Bone01.R.006
+    400044: Bone01.R.007
+    400046: Bone01.R.008
+    400048: Bone01.R.009
+    400050: Bone01.R.010
+    400052: Bone01.R.011
+    400054: Bone01.R.012
+    400056: Bone01.R.015
+    400058: Bone01.R.016
+    400060: Cube.006
+    400062: Cube.007
+    400064: Cube.008
+    400066: Cube.033
+    400068: Cube.039
+    400070: Cube.094
+    400072: Cube.095
+    400074: Cube.096
+    400076: Cube.097
+    400078: Cube.098
+    400080: Cube.099
+    400082: Cube.100
+    400084: Cube.101
+    400086: Cube.102
+    400088: Cylinder.002
+    400090: Cylinder.005
+    400092: Cylinder.006
+    400094: Cylinder.007
+    400096: Cylinder.008
+    400098: Cylinder.010
+    400100: Cylinder.011
+    400102: Cylinder.020
+    400104: Cylinder.023
+    400106: Cylinder.060
+    400108: Cylinder.061
+    400110: Cylinder.062
+    400112: Cylinder.063
+    400114: Plane.013
+    400116: Plane.014
+    400118: Plane.016
+    400120: Plane.018
+    400122: Plane.019
+    400124: Plane.020
+    400126: Plane.021
+    400128: Plane.024
+    400130: Plane.025
+    400132: Plane.026
+    400134: Plane.027
+    400136: Plane.028
+    400138: Plane.029
+    400140: Plane.031
+    400142: Plane.032
+    400144: Plane.034
+    400146: Plane.034_MeshPart0
+    400148: Plane.034_MeshPart1
+    400150: Plane.034_MeshPart2
+    400152: Plane.034_MeshPart3
+    400154: Plane.034_MeshPart4
+    400156: Plane.034_MeshPart5
+    400158: Plane.038
+    400160: Plane.039
+    400162: Plane.040
+    400164: Plane.042
+    400166: Plane.043
+    400168: root
+    2300000: Cube.008
+    2300002: Cube.094
+    2300004: Cube.095
+    2300006: Cube.096
+    2300008: Cube.097
+    2300010: Cube.098
+    2300012: Cube.099
+    2300014: Cube.100
+    2300016: Cube.101
+    2300018: Cube.102
+    2300020: Cylinder.002
+    2300022: Cylinder.060
+    2300024: Cylinder.061
+    2300026: Cylinder.062
+    2300028: Cylinder.063
+    2300030: Plane.014
+    2300032: Plane.016
+    2300034: Plane.018
+    2300036: Plane.019
+    2300038: Plane.020
+    2300040: Plane.021
+    2300042: Plane.024
+    2300044: Plane.025
+    2300046: Plane.026
+    2300048: Plane.027
+    2300050: Plane.028
+    2300052: Plane.029
+    2300054: Plane.031
+    2300056: Plane.032
+    2300058: Plane.038
+    2300060: Plane.039
+    2300062: Plane.040
+    2300064: Plane.042
+    2300066: Plane.043
+    3300000: Cube.008
+    3300002: Cube.094
+    3300004: Cube.095
+    3300006: Cube.096
+    3300008: Cube.097
+    3300010: Cube.098
+    3300012: Cube.099
+    3300014: Cube.100
+    3300016: Cube.101
+    3300018: Cube.102
+    3300020: Cylinder.002
+    3300022: Cylinder.060
+    3300024: Cylinder.061
+    3300026: Cylinder.062
+    3300028: Cylinder.063
+    3300030: Plane.014
+    3300032: Plane.016
+    3300034: Plane.018
+    3300036: Plane.019
+    3300038: Plane.020
+    3300040: Plane.021
+    3300042: Plane.024
+    3300044: Plane.025
+    3300046: Plane.026
+    3300048: Plane.027
+    3300050: Plane.028
+    3300052: Plane.029
+    3300054: Plane.031
+    3300056: Plane.032
+    3300058: Plane.038
+    3300060: Plane.039
+    3300062: Plane.040
+    3300064: Plane.042
+    3300066: Plane.043
+    4300000: Cube.008
+    4300002: Plane.032
+    4300004: Plane.031
+    4300006: Plane.014
+    4300008: Cube.102
+    4300010: Cube.101
+    4300012: Plane.043
+    4300014: Cube.100
+    4300016: Cube.099
+    4300018: Cube.098
+    4300020: Cube.097
+    4300022: Cube.096
+    4300024: Plane.042
+    4300026: Cylinder.063
+    4300028: Plane.019
+    4300030: Cylinder.062
+    4300032: Cylinder.061
+    4300034: Plane.025
+    4300036: Plane.040
+    4300038: Plane.039
+    4300040: Cube.095
+    4300042: Plane.038
+    4300044: Plane.024
+    4300046: Cube.094
+    4300048: Plane.029
+    4300050: Plane.028
+    4300052: Plane.027
+    4300054: Plane.026
+    4300056: Plane.021
+    4300058: Plane.020
+    4300060: Plane.018
+    4300062: Cylinder.002
+    4300064: Plane.016
+    4300066: Plane.034_MeshPart0
+    4300068: Plane.034_MeshPart1
+    4300070: Plane.034_MeshPart2
+    4300072: Plane.034_MeshPart3
+    4300074: Plane.034_MeshPart4
+    4300076: Plane.034_MeshPart5
+    4300078: Cube.007
+    4300080: Cylinder.011
+    4300082: Cube.006
+    4300084: Cylinder.010
+    4300086: Cylinder.008
+    4300088: Cylinder.006
+    4300090: Cylinder.007
+    4300092: Cylinder.005
+    4300094: Cylinder.020
+    4300096: Cylinder.023
+    4300098: Cube.033
+    4300100: Cube.039
+    4300102: Plane.013
+    4300104: Cylinder.060
+    7400000: Armature|EmptyAction
+    7400002: Armature|EmptyAction.001
+    7400004: Armature|PlaneAction
+    7400006: Armature|WALK
+    7400008: Armature|WALK0
+    9500000: //RootNode
+    13700000: Cube.006
+    13700002: Cube.007
+    13700004: Cube.033
+    13700006: Cube.039
+    13700008: Cylinder.005
+    13700010: Cylinder.006
+    13700012: Cylinder.007
+    13700014: Cylinder.008
+    13700016: Cylinder.010
+    13700018: Cylinder.011
+    13700020: Cylinder.020
+    13700022: Cylinder.023
+    13700024: Plane.013
+    13700026: Plane.034_MeshPart0
+    13700028: Plane.034_MeshPart1
+    13700030: Plane.034_MeshPart2
+    13700032: Plane.034_MeshPart3
+    13700034: Plane.034_MeshPart4
+    13700036: Plane.034_MeshPart5
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|WALK
+      takeName: Armature|WALK
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone01.L.003
+        weight: 1
+      - path: Armature/Bone01.L.003/Bone01.L.004
+        weight: 1
+      - path: Armature/Bone01.L.003/Bone01.L.005
+        weight: 1
+      - path: Armature/Bone01.L.003/Bone01.L.006
+        weight: 1
+      - path: Armature/Bone01.L.003/Bone01.L.015
+        weight: 1
+      - path: Armature/Bone01.L.009
+        weight: 1
+      - path: Armature/Bone01.L.009/Bone01.L.010
+        weight: 1
+      - path: Armature/Bone01.L.009/Bone01.L.011
+        weight: 1
+      - path: Armature/Bone01.L.009/Bone01.L.012
+        weight: 1
+      - path: Armature/Bone01.L.009/Bone01.L.016
+        weight: 1
+      - path: Armature/Bone01.R.003
+        weight: 1
+      - path: Armature/Bone01.R.003/Bone01.R.004
+        weight: 1
+      - path: Armature/Bone01.R.003/Bone01.R.005
+        weight: 1
+      - path: Armature/Bone01.R.003/Bone01.R.006
+        weight: 1
+      - path: Armature/Bone01.R.003/Bone01.R.015
+        weight: 1
+      - path: Armature/Bone01.R.009
+        weight: 1
+      - path: Armature/Bone01.R.009/Bone01.R.010
+        weight: 1
+      - path: Armature/Bone01.R.009/Bone01.R.011
+        weight: 1
+      - path: Armature/Bone01.R.009/Bone01.R.012
+        weight: 1
+      - path: Armature/Bone01.R.009/Bone01.R.016
+        weight: 1
+      - path: Armature/root
+        weight: 1
+      - path: Armature/root/Bone01.L.001
+        weight: 1
+      - path: Armature/root/Bone01.L.001/Bone01.L.002
+        weight: 1
+      - path: Armature/root/Bone01.L.007
+        weight: 1
+      - path: Armature/root/Bone01.L.007/Bone01.L.008
+        weight: 1
+      - path: Armature/root/Bone01.R.001
+        weight: 1
+      - path: Armature/root/Bone01.R.001/Bone01.R.002
+        weight: 1
+      - path: Armature/root/Bone01.R.007
+        weight: 1
+      - path: Armature/root/Bone01.R.007/Bone01.R.008
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Cube.007
+        weight: 1
+      - path: Cube.008
+        weight: 1
+      - path: Cube.033
+        weight: 1
+      - path: Cube.039
+        weight: 1
+      - path: Cube.094
+        weight: 1
+      - path: Cube.095
+        weight: 1
+      - path: Cube.096
+        weight: 1
+      - path: Cube.097
+        weight: 1
+      - path: Cube.098
+        weight: 1
+      - path: Cube.099
+        weight: 1
+      - path: Cube.100
+        weight: 1
+      - path: Cube.101
+        weight: 1
+      - path: Cube.102
+        weight: 1
+      - path: Cylinder.002
+        weight: 1
+      - path: Cylinder.005
+        weight: 1
+      - path: Cylinder.006
+        weight: 1
+      - path: Cylinder.007
+        weight: 1
+      - path: Cylinder.008
+        weight: 1
+      - path: Cylinder.010
+        weight: 1
+      - path: Cylinder.011
+        weight: 1
+      - path: Cylinder.020
+        weight: 1
+      - path: Cylinder.023
+        weight: 1
+      - path: Cylinder.060
+        weight: 1
+      - path: Cylinder.061
+        weight: 1
+      - path: Cylinder.062
+        weight: 1
+      - path: Cylinder.063
+        weight: 1
+      - path: Plane.013
+        weight: 1
+      - path: Plane.014
+        weight: 1
+      - path: Plane.016
+        weight: 1
+      - path: Plane.018
+        weight: 1
+      - path: Plane.019
+        weight: 1
+      - path: Plane.020
+        weight: 1
+      - path: Plane.021
+        weight: 1
+      - path: Plane.024
+        weight: 1
+      - path: Plane.025
+        weight: 1
+      - path: Plane.026
+        weight: 1
+      - path: Plane.027
+        weight: 1
+      - path: Plane.028
+        weight: 1
+      - path: Plane.029
+        weight: 1
+      - path: Plane.031
+        weight: 1
+      - path: Plane.032
+        weight: 1
+      - path: Plane.034
+        weight: 1
+      - path: Plane.034/Plane.034_MeshPart0
+        weight: 1
+      - path: Plane.034/Plane.034_MeshPart1
+        weight: 1
+      - path: Plane.034/Plane.034_MeshPart2
+        weight: 1
+      - path: Plane.034/Plane.034_MeshPart3
+        weight: 1
+      - path: Plane.034/Plane.034_MeshPart4
+        weight: 1
+      - path: Plane.034/Plane.034_MeshPart5
+        weight: 1
+      - path: Plane.038
+        weight: 1
+      - path: Plane.039
+        weight: 1
+      - path: Plane.040
+        weight: 1
+      - path: Plane.042
+        weight: 1
+      - path: Plane.043
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

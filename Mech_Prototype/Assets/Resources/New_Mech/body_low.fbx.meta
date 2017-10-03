@@ -1,0 +1,239 @@
+fileFormatVersion: 2
+guid: b7ca4ed513e9f4169b750cebbc7f8030
+timeCreated: 1506617934
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: arm01_low
+    100002: arm02_high
+    100004: arm03_low
+    100006: blade_low
+    100008: body01_low
+    100010: body02_low
+    100012: body03_low
+    100014: //RootNode
+    100016: cyl01_low
+    100018: cyl02_low
+    100020: cyl03_low
+    100022: cyl04_low
+    100024: f101_low
+    100026: f102_low
+    100028: f201_low
+    100030: f202_low
+    100032: f203_low
+    100034: f301_low
+    100036: f302_low
+    100038: f303_low
+    100040: f401_low
+    100042: f402_low
+    100044: f403_low
+    100046: gun01_low
+    100048: head_low
+    100050: leg01_low
+    100052: leg02_low
+    100054: leg03_low
+    100056: leg04_low
+    100058: leg05_low
+    100060: plate02_low
+    100062: plate_low
+    400000: arm01_low
+    400002: arm02_high
+    400004: arm03_low
+    400006: blade_low
+    400008: body01_low
+    400010: body02_low
+    400012: body03_low
+    400014: //RootNode
+    400016: cyl01_low
+    400018: cyl02_low
+    400020: cyl03_low
+    400022: cyl04_low
+    400024: f101_low
+    400026: f102_low
+    400028: f201_low
+    400030: f202_low
+    400032: f203_low
+    400034: f301_low
+    400036: f302_low
+    400038: f303_low
+    400040: f401_low
+    400042: f402_low
+    400044: f403_low
+    400046: gun01_low
+    400048: head_low
+    400050: leg01_low
+    400052: leg02_low
+    400054: leg03_low
+    400056: leg04_low
+    400058: leg05_low
+    400060: plate02_low
+    400062: plate_low
+    2300000: arm01_low
+    2300002: arm02_high
+    2300004: arm03_low
+    2300006: blade_low
+    2300008: body01_low
+    2300010: body02_low
+    2300012: body03_low
+    2300014: cyl01_low
+    2300016: cyl02_low
+    2300018: cyl03_low
+    2300020: cyl04_low
+    2300022: f101_low
+    2300024: f102_low
+    2300026: f201_low
+    2300028: f202_low
+    2300030: f203_low
+    2300032: f301_low
+    2300034: f302_low
+    2300036: f303_low
+    2300038: f401_low
+    2300040: f402_low
+    2300042: f403_low
+    2300044: gun01_low
+    2300046: head_low
+    2300048: leg01_low
+    2300050: leg02_low
+    2300052: leg03_low
+    2300054: leg04_low
+    2300056: leg05_low
+    2300058: plate02_low
+    2300060: plate_low
+    3300000: arm01_low
+    3300002: arm02_high
+    3300004: arm03_low
+    3300006: blade_low
+    3300008: body01_low
+    3300010: body02_low
+    3300012: body03_low
+    3300014: cyl01_low
+    3300016: cyl02_low
+    3300018: cyl03_low
+    3300020: cyl04_low
+    3300022: f101_low
+    3300024: f102_low
+    3300026: f201_low
+    3300028: f202_low
+    3300030: f203_low
+    3300032: f301_low
+    3300034: f302_low
+    3300036: f303_low
+    3300038: f401_low
+    3300040: f402_low
+    3300042: f403_low
+    3300044: gun01_low
+    3300046: head_low
+    3300048: leg01_low
+    3300050: leg02_low
+    3300052: leg03_low
+    3300054: leg04_low
+    3300056: leg05_low
+    3300058: plate02_low
+    3300060: plate_low
+    4300000: cyl03_low
+    4300002: gun01_low
+    4300004: plate_low
+    4300006: plate02_low
+    4300008: blade_low
+    4300010: f102_low
+    4300012: f101_low
+    4300014: f401_low
+    4300016: f403_low
+    4300018: f402_low
+    4300020: f301_low
+    4300022: f303_low
+    4300024: f302_low
+    4300026: f202_low
+    4300028: f203_low
+    4300030: f201_low
+    4300032: arm03_low
+    4300034: arm02_high
+    4300036: arm01_low
+    4300038: head_low
+    4300040: body01_low
+    4300042: cyl02_low
+    4300044: cyl01_low
+    4300046: body02_low
+    4300048: body03_low
+    4300050: leg01_low
+    4300052: leg02_low
+    4300054: leg03_low
+    4300056: cyl04_low
+    4300058: leg04_low
+    4300060: leg05_low
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

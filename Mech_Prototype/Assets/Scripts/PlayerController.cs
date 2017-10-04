@@ -8,6 +8,13 @@ public class PlayerController : MonoBehaviour {
 	public Transform body;
 	private Animator animator;
 
+	[Range(0f, 1f)]
+	public float emulateFront = 0f;
+	[Range(-1f, 1f)]
+	public float emulateSide = 0f;
+	[Range(-1f, 1f)]
+	public float emulateRotation = 0f;
+
 	public float movementSpeed = 2f;
 	public float rotationSpeed = 20f;
 	public float bodyRotationSpeed = 20f;
@@ -67,6 +74,15 @@ public class PlayerController : MonoBehaviour {
 		movementVector.x = joystick.Horizontal();
 		movementVector.z = joystick.Vertical();
 		rotationVector.y = swipe.Value();
+
+		if (!emulateFront.Equals(0f))
+			movementVector.z = emulateFront;
+
+		if (!emulateSide.Equals(0f))
+			movementVector.x = emulateSide;
+
+		if (!emulateRotation.Equals(0f))
+			rotationVector.y = emulateRotation;
 
 		//animator.SetFloat ("speed", movementVector.z);
 		//animator.SetFloat ("direction", movementVector.x);

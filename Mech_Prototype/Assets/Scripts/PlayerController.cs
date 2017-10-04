@@ -51,8 +51,6 @@ public class PlayerController : MonoBehaviour {
 		movementVector.z = joystick.Vertical();
 		rotationVector.y = swipe.Value();
 
-		movementVector.z = 1f;
-
 		animator.SetFloat ("speed", movementVector.z);
 		animator.SetFloat ("direction", movementVector.x);
 	}

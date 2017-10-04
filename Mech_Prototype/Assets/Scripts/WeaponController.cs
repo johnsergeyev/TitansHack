@@ -49,7 +49,9 @@ public class WeaponController : MonoBehaviour {
 		weapon.shootingPoint = shootingPoint;
 
 		weapon.OnTriggerDown ();
-		animator.SetBool ("shooting", true);
+		if (weapon.ReadyToShoot ()) {
+			animator.SetBool ("shooting", true);
+		}
 	}
 
 	private void onFireUp(Weapon weapon) {
@@ -61,12 +63,6 @@ public class WeaponController : MonoBehaviour {
 	}
 
 	void Update() {
-		if (mainWeapon)
-			mainWeapon.CheckShoot ();
-
-		if (secondaryWeapon)
-			secondaryWeapon.CheckShoot ();
-
 		Debug.DrawRay (Camera.main.transform.position, Camera.main.transform.forward * 100f);
 
 		RaycastHit hit;
@@ -78,5 +74,13 @@ public class WeaponController : MonoBehaviour {
 		}
 
 		Debug.DrawRay (shootingPoint.position, shootingPoint.forward * 100f);
+
+		if (mainWeapon) {
+			mainWeapon.CheckShoot ();
+		}
+
+		if (secondaryWeapon) {
+			secondaryWeapon.CheckShoot ();
+		}
 	}
 }

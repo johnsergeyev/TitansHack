@@ -30,7 +30,7 @@ public class FireButtonController : MonoBehaviour, IPointerUpHandler, IPointerDo
 		if (v.y != padding) {
 			for (int i = 1; i < 100; i++) {
 				if (v.y == (i * originalSize + (i + 1) * padding)) {
-					v.y = i * size + (i + 1) * padding;
+					v.y = (i * size + (i + 1) * padding) * scale.magnitude;
 					rt.offsetMin = v;
 					v = rt.sizeDelta;
 					v.y = originalSize;

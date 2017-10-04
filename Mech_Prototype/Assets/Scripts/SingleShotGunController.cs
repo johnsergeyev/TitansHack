@@ -5,9 +5,14 @@ using UnityEngine;
 public class SingleShotGunController : Weapon {
 	public override void CheckShoot ()
 	{
+		base.CheckShoot ();
+
 		if (isFingerOnTheTrigger) {
 			isFingerOnTheTrigger = false;
-			Shoot ();
+
+			if (ReadyToShoot()) {
+				Shoot ();
+			} 
 		}
 	}
 }

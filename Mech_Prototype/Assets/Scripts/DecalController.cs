@@ -29,4 +29,14 @@ public class DecalController : MonoBehaviour {
 			return go;
 		}
 	}
+
+	public void SetVFXToDestroy(GameObject go, float ttl) {
+		object[] p = new object[2]{go, ttl};
+		StartCoroutine ("DestroyVFX", p);
+	}
+
+	IEnumerator DestroyVFX(object[] p) {
+		yield return new WaitForSeconds ((float)p[1]);
+		Destroy ((GameObject)p[0]);
+	}
 }

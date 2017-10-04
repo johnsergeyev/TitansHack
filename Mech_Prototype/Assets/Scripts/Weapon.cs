@@ -8,6 +8,9 @@ public class Weapon : MonoBehaviour, IWeapon {
 	public float shootDistance = 100f;
  	public float shootSpeed = 5f;
 
+	public float cooldown = 1f;
+	protected float tick = -1f;
+
 	[HideInInspector]
 	public Animator animator;
 	[HideInInspector]
@@ -16,6 +19,7 @@ public class Weapon : MonoBehaviour, IWeapon {
 	protected bool isFingerOnTheTrigger = false;
 
 	protected void Shoot() {
+		tick = 0.0f;
 		GameObject _bullet = (GameObject)Instantiate (bullet, shootingPoint.position, shootingPoint.rotation);
 		(_bullet.GetComponent<BulletController> ()).distance = shootDistance;
 		(_bullet.GetComponent<BulletController> ()).speed = shootSpeed;
@@ -31,6 +35,12 @@ public class Weapon : MonoBehaviour, IWeapon {
 	}
 
 	public virtual void CheckShoot() {
-		
+		if (tick == -1f)
+			tick = cooldown;
+		tick += Time.deltaTime;
+	}
+
+	public virtual bool ReadyToShoot() {
+		return tick >= cooldown;
 	}
 }

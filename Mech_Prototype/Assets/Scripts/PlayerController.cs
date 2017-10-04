@@ -25,10 +25,27 @@ public class PlayerController : MonoBehaviour {
 	private float legsAngle;
 	private float bodyAngle;
 
+	private Vector3 lastPos;
+	private Vector2 actualSpeed = Vector2.zero; 
+
 	private void Start() {
 		animator = GetComponent<Animator> ();
 		movementVector = Vector3.zero;
 		rotationVector = Vector3.zero;
+		lastPos = transform.position;
+
+		StartCoroutine ("CalcSpeed");
+	}
+
+	IEnumerator CalcSpeed() {
+		while (Application.isPlaying) {
+			lastPos = transform.position;
+
+			yield return new WaitForFixedUpdate ();
+
+			actualSpeed.x = (transform.position.x - lastPos.x)/Time.fixedDeltaTime;
+			actualSpeed.y = (transform.position.z - lastPos.z)/Time.fixedDeltaTime;
+		}
 	}
 
 	private void calculateAngles()
@@ -51,9 +68,13 @@ public class PlayerController : MonoBehaviour {
 		movementVector.z = joystick.Vertical();
 		rotationVector.y = swipe.Value();
 
+		//animator.SetFloat ("speed", movementVector.z);
+		//animator.SetFloat ("direction", movementVector.x);
 
-		animator.SetFloat ("speed", movementVector.z);
-		animator.SetFloat ("direction", movementVector.x);
+		animator.SetFloat ("speed", actualSpeed.y / movementSpeed);
+		animator.SetFloat ("direction", actualSpeed.x / movementSpeed);
+
+		lastPos = transform.position;
 	}
 
 	private float rSpeed;

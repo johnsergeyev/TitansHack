@@ -6,7 +6,14 @@ public class WeaponController : MonoBehaviour {
 	public Transform shootingPoint;
 	public Weapon mainWeapon;
 	public Weapon secondaryWeapon;
+	public float minDistance = 2f;
+
 	private Animator animator;
+	private Transform initial;
+
+	void Start() {
+		initial = shootingPoint.transform;
+	}
 
 	void OnEnable () {
 		EventManager.StartListening ("onFireButtonDownMain", onFireDownMain);
@@ -68,8 +75,11 @@ public class WeaponController : MonoBehaviour {
 		RaycastHit hit;
 
 		if (Physics.Raycast (Camera.main.transform.position, Camera.main.transform.forward, out hit)) {
-			if (hit.collider.gameObject.tag == "Hittable") {
+			if (hit.collider.gameObject.tag == "Hittable" && (Vector3.Distance(shootingPoint.position, hit.point) >= minDistance)) {
 				shootingPoint.LookAt(hit.point);
+			} else {
+				shootingPoint.transform.position = initial.position;
+				shootingPoint.transform.rotation = initial.rotation;
 			}
 		}
 

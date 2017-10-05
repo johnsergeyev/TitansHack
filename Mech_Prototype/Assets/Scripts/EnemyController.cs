@@ -25,7 +25,6 @@ public class EnemyController : MonoBehaviour {
 		animator.SetFloat ("direction", actualSpeed.x);
 
 		agent.SetDestination (target.transform.position);
-		transform.LookAt (agent.nextPosition);
 	}
 
 	IEnumerator CalcSpeed() {

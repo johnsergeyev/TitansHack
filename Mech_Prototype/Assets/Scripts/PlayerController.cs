@@ -8,12 +8,16 @@ public class PlayerController : MonoBehaviour {
 	public Transform body;
 	private Animator animator;
 
-	[Range(0f, 1f)]
+	[Range(-1f, 1f)]
 	public float emulateFront = 0f;
 	[Range(-1f, 1f)]
 	public float emulateSide = 0f;
 	[Range(-1f, 1f)]
 	public float emulateRotation = 0f;
+
+	public bool animationBasedOnJoystick = false;
+	public bool useInertion = false;
+	public float movementInertionKf = 0.1f;
 
 	public float movementSpeed = 2f;
 	public float rotationSpeed = 20f;
@@ -25,6 +29,7 @@ public class PlayerController : MonoBehaviour {
 	public bool easeRotation = false;
 
 	private Vector3 movementVector;
+	private Vector3 iMovementVector;
 	private Vector3 rotationVector;
 
 	private Vector3 tmp;
@@ -33,12 +38,15 @@ public class PlayerController : MonoBehaviour {
 	private float bodyAngle;
 
 	private Vector3 lastPos;
-	private Vector2 actualSpeed = Vector2.zero; 
+	private Vector3 actualSpeed = Vector3.zero; 
 
 	private void Start() {
 		animator = GetComponent<Animator> ();
+
 		movementVector = Vector3.zero;
+		iMovementVector = Vector3.zero;
 		rotationVector = Vector3.zero;
+
 		lastPos = transform.position;
 
 		StartCoroutine ("CalcSpeed");
@@ -46,13 +54,36 @@ public class PlayerController : MonoBehaviour {
 
 	IEnumerator CalcSpeed() {
 		while (Application.isPlaying) {
-			lastPos = transform.position;
+			lastPos = transform.localPosition;
 
 			yield return new WaitForFixedUpdate ();
 
-			actualSpeed.x = (transform.position.x - lastPos.x)/Time.fixedDeltaTime;
-			actualSpeed.y = (transform.position.z - lastPos.z)/Time.fixedDeltaTime;
+			iMovementVector = calculateInertion (iMovementVector, movementVector, movementInertionKf);
+
+			actualSpeed = (transform.localPosition - lastPos) / Time.fixedDeltaTime;
+			actualSpeed = transform.InverseTransformDirection (actualSpeed);
 		}
+	}
+
+	private Vector3 calculateInertion(Vector3 oldVector, Vector3 newVector, float inertion) {
+		oldVector.x = calculateDelta (oldVector.x, newVector.x, inertion);
+		oldVector.z = calculateDelta (oldVector.z, newVector.z, inertion);
+
+		return oldVector;
+	}
+
+	private float calculateDelta(float oldF, float newF, float delta) {
+		if (Mathf.Abs (newF - oldF) > delta) {
+			if (newF < oldF) {
+				oldF -= delta;
+			} else {
+				oldF += delta;
+			}
+		} else {
+			oldF = newF;
+		}
+
+		return oldF;
 	}
 
 	private void calculateAngles()
@@ -84,11 +115,13 @@ public class PlayerController : MonoBehaviour {
 		if (!emulateRotation.Equals(0f))
 			rotationVector.y = emulateRotation;
 
-		//animator.SetFloat ("speed", movementVector.z);
-		//animator.SetFloat ("direction", movementVector.x);
-
-		animator.SetFloat ("speed", actualSpeed.y / movementSpeed);
-		animator.SetFloat ("direction", actualSpeed.x / movementSpeed);
+		if (animationBasedOnJoystick) {
+			animator.SetFloat ("speed", movementVector.z);
+			animator.SetFloat ("direction", movementVector.x);
+		} else {
+			animator.SetFloat ("speed", actualSpeed.z / movementSpeed);
+			animator.SetFloat ("direction", actualSpeed.x / movementSpeed);
+		}
 
 		lastPos = transform.position;
 	}
@@ -142,9 +175,9 @@ public class PlayerController : MonoBehaviour {
 				}
 			}
 		}
-
-		body.Rotate ((rotationVector * (hardLockMode?rotationSpeed:bodyRotationSpeed) - tmp) * Time.fixedDeltaTime);
-		transform.Rotate(tmp * Time.fixedDeltaTime);
-		transform.Translate(movementVector * movementSpeed * Time.fixedDeltaTime);
+			
+		body.Rotate ((rotationVector * (hardLockMode ? rotationSpeed : bodyRotationSpeed) - tmp) * Time.fixedDeltaTime);
+		transform.Rotate (tmp * Time.fixedDeltaTime);
+		transform.Translate ((useInertion?iMovementVector:movementVector) * movementSpeed * Time.fixedDeltaTime);
 	}
 }

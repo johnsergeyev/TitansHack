@@ -191,11 +191,11 @@ public class PlayerController : MonoBehaviour {
 
 	IEnumerator CalcSpeed() {
 		while (Application.isPlaying) {
-			lastPos = transform.localPosition;
+			lastPos = transform.position;
 
 			yield return new WaitForFixedUpdate ();
 
-			actualSpeed = (transform.localPosition - lastPos) / Time.fixedDeltaTime;
+			actualSpeed = (transform.position - lastPos) / Time.fixedDeltaTime;
 			actualSpeed = transform.InverseTransformDirection (actualSpeed);
 		}
 	}

@@ -17,7 +17,9 @@ public class PlayerController : MonoBehaviour {
 
 	public bool animationBasedOnJoystick = false;
 	public bool useInertion = false;
-	public float movementInertionKf = 0.1f;
+
+	public float movementInertionKf = 0.07f;
+	public float rotationInertionKf= 0.07f;
 
 	public float movementSpeed = 2f;
 	public float rotationSpeed = 20f;
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour {
 	private Vector3 movementVector;
 	private Vector3 iMovementVector;
 	private Vector3 rotationVector;
+	private Vector3 iRotationVector;
 
 	private Vector3 tmp;
 	private float delta;
@@ -46,28 +49,19 @@ public class PlayerController : MonoBehaviour {
 		movementVector = Vector3.zero;
 		iMovementVector = Vector3.zero;
 		rotationVector = Vector3.zero;
+		iRotationVector = Vector3.zero;
 
 		lastPos = transform.position;
 
 		StartCoroutine ("CalcSpeed");
+		StartCoroutine ("CalcInertion");
 	}
 
-	IEnumerator CalcSpeed() {
-		while (Application.isPlaying) {
-			lastPos = transform.localPosition;
-
-			yield return new WaitForFixedUpdate ();
-
-			iMovementVector = calculateInertion (iMovementVector, movementVector, movementInertionKf);
-
-			actualSpeed = (transform.localPosition - lastPos) / Time.fixedDeltaTime;
-			actualSpeed = transform.InverseTransformDirection (actualSpeed);
-		}
-	}
-
-	private Vector3 calculateInertion(Vector3 oldVector, Vector3 newVector, float inertion) {
-		oldVector.x = calculateDelta (oldVector.x, newVector.x, inertion);
-		oldVector.z = calculateDelta (oldVector.z, newVector.z, inertion);
+	private Vector3 calculateInertion(Vector3 oldVector, Vector3 newVector, float inertion, 
+		bool x, bool y, bool z) {
+		if (x) oldVector.x = calculateDelta (oldVector.x, newVector.x, inertion);
+		if (y) oldVector.y = calculateDelta (oldVector.y, newVector.y, inertion);
+		if (z) oldVector.z = calculateDelta (oldVector.z, newVector.z, inertion);
 
 		return oldVector;
 	}
@@ -136,6 +130,7 @@ public class PlayerController : MonoBehaviour {
 
 	private void FixedUpdate() {
 		calculateAngles();
+
 		rSpeed = 0;
 		tmp = Vector3.zero;
 		hardLockMode = false;
@@ -176,8 +171,32 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 			
-		body.Rotate ((rotationVector * (hardLockMode ? rotationSpeed : bodyRotationSpeed) - tmp) * Time.fixedDeltaTime);
+		body.Rotate (((useInertion?iRotationVector:rotationVector) * (hardLockMode ? rotationSpeed : bodyRotationSpeed) - tmp) * Time.fixedDeltaTime);
 		transform.Rotate (tmp * Time.fixedDeltaTime);
 		transform.Translate ((useInertion?iMovementVector:movementVector) * movementSpeed * Time.fixedDeltaTime);
+	}
+
+	IEnumerator CalcInertion() {
+		while (Application.isPlaying) {
+			yield return new WaitForEndOfFrame ();
+
+			if (useInertion) {
+				iMovementVector = calculateInertion (iMovementVector, movementVector, movementInertionKf, true, false, true);
+				iRotationVector = calculateInertion (iRotationVector, rotationVector, rotationInertionKf, false, true, true);
+
+				Debug.Log (rotationVector + " vs " + iRotationVector);
+			}
+		}
+	}
+
+	IEnumerator CalcSpeed() {
+		while (Application.isPlaying) {
+			lastPos = transform.localPosition;
+
+			yield return new WaitForFixedUpdate ();
+
+			actualSpeed = (transform.localPosition - lastPos) / Time.fixedDeltaTime;
+			actualSpeed = transform.InverseTransformDirection (actualSpeed);
+		}
 	}
 }

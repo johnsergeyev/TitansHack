@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
 	public float emulateRotation = 0f;
 
 	public bool animationBasedOnJoystick = false;
-	public bool useInertion = false;
+	public bool useInertion = true;
 
 	public float movementInertionKf = 0.07f;
 	public float rotationInertionKf= 0.07f;
@@ -184,7 +184,8 @@ public class PlayerController : MonoBehaviour {
 				iMovementVector = calculateInertion (iMovementVector, movementVector, movementInertionKf, true, false, true);
 				iRotationVector = calculateInertion (iRotationVector, rotationVector, rotationInertionKf, false, true, true);
 
-				Debug.Log (rotationVector + " vs " + iRotationVector);
+				//iMovementVector = Vector3.Lerp (iMovementVector, movementVector, movementInertionKf);
+				//iRotationVector = Vector3.Lerp (iRotationVector, rotationVector, movementInertionKf);
 			}
 		}
 	}

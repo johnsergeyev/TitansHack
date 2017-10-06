@@ -9,39 +9,9 @@ public class FireButtonController : MonoBehaviour, IPointerUpHandler, IPointerDo
 	public bool continiousShooting = true;
 	public bool isMainWeapon = true;
 
-	private float size;
-	private RectTransform rt;
 	private bool isDown = false;
 	private bool isOver = false;
 
-	void Start () {
-		float originalSize;
-
-		size = Screen.height * heightPercentage / 100;
-		Vector3 scale = transform.localScale;
-
-		rt = GetComponent<RectTransform> ();
-
-		originalSize = rt.sizeDelta.x;
-		scale = scale * size / rt.sizeDelta.x;
-
-		Vector2 v = rt.offsetMin;
-
-		if (v.y != padding) {
-			for (int i = 1; i < 100; i++) {
-				if (v.y == (i * originalSize + (i + 1) * padding)) {
-					v.y = (i * size + (i + 1) * padding) * scale.magnitude;
-					rt.offsetMin = v;
-					v = rt.sizeDelta;
-					v.y = originalSize;
-					rt.sizeDelta = v;
-					break;
-				}
-			}
-		}
-
-		transform.localScale = scale;
-	}
 
 	public virtual void OnPointerEnter(PointerEventData ped) {
 		if (!continiousShooting)

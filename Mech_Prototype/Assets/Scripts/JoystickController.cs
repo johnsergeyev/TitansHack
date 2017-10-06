@@ -14,15 +14,7 @@ public class JoystickController : MonoBehaviour, IDragHandler, IPointerUpHandler
 	private float size;
 
 	private void Start() {
-		size = Screen.height * heightPercentage / 100;
-
 		bgImg = GetComponent<Image> ();
-
-		Vector3 scale = transform.localScale;
-		scale = scale * size / bgImg.rectTransform.sizeDelta.x;
-
-		transform.localScale = scale;
-
 		joystickImg = transform.GetChild (0).GetComponent<Image> ();
 	}
 

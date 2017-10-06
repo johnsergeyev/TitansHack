@@ -96,18 +96,29 @@ public class PlayerController : MonoBehaviour {
 		if (!swipe)
 			return;
 
-		movementVector.x = joystick.Horizontal();
-		movementVector.z = joystick.Vertical();
-		rotationVector.y = swipe.Value();
+		if (Input.GetKey (KeyCode.W)) {
+			movementVector.z = 1f;
+		} else if (Input.GetKey (KeyCode.S)) {
+			movementVector.z = -1f;
+		} else if (Input.GetKey (KeyCode.A)) {
+			movementVector.x = -1f;
+		} else if (Input.GetKey (KeyCode.D)) {
+			movementVector.x = 1f;
+		} else {
+			movementVector.x = joystick.Horizontal ();
+			movementVector.z = joystick.Vertical ();
 
-		if (!emulateFront.Equals(0f))
-			movementVector.z = emulateFront;
+			if (!emulateFront.Equals(0f))
+				movementVector.z = emulateFront;
 
-		if (!emulateSide.Equals(0f))
-			movementVector.x = emulateSide;
+			if (!emulateSide.Equals(0f))
+				movementVector.x = emulateSide;
 
-		if (!emulateRotation.Equals(0f))
-			rotationVector.y = emulateRotation;
+			if (!emulateRotation.Equals(0f))
+				rotationVector.y = emulateRotation;
+		}
+
+		rotationVector.y = swipe.Value ();
 
 		if (animationBasedOnJoystick) {
 			animator.SetFloat ("speed", movementVector.z);

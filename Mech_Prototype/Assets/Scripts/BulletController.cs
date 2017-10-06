@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour {
+	[HideInInspector]
 	public float distance;
+	[HideInInspector]
 	public float speed;
+	[HideInInspector]
 	public Transform initial;
-    public GameObject decal;
+	[HideInInspector]
+	public GameObject decal;
 
+	[HideInInspector]
 	public GameObject vfx;
+	[HideInInspector]
 	public float vfx_ttl = 0.1f;
 
 	private GameObject vfxGO;

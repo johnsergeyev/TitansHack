@@ -3,6 +3,8 @@ Properties {
 	_Color ("Main Color", Color) = (1,1,1,1)
 	_MainTex ("Base (RGB)", 2D) = "white" {}
 	_BaseScale ("Base Tiling", Vector) = (1,1,1,0)
+		_EmissionColor("Emission", Color) = (0,0,0,0)
+		_EmissionMap("Emission Map", 2D) = "black" {}
 }
 
 SubShader {
